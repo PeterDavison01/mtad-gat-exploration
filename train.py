@@ -15,21 +15,21 @@ if __name__ == "__main__":
 
     parser = get_parser()
     args = parser.parse_args()
-
-    dataset = args.dataset
-    window_size = args.lookback
-    spec_res = args.spec_res
-    normalize = args.normalize
-    n_epochs = args.epochs
-    batch_size = args.bs
-    init_lr = args.init_lr
-    val_split = args.val_split
-    shuffle_dataset = args.shuffle_dataset
-    use_cuda = args.use_cuda
-    print_every = args.print_every
-    log_tensorboard = args.log_tensorboard
-    group_index = args.group[0]
-    index = args.group[2:]
+    #                                                       **Defaults**
+    dataset = args.dataset                          # 'MSL'
+    window_size = args.lookback                   # 100, for sliding window
+    spec_res = args.spec_res                       # False, _not used_
+    normalize = args.normalize                     # True, normalise data or not in preprocessing
+    n_epochs = args.epochs                          # 30
+    batch_size = args.bs                            # 256
+    init_lr = args.init_lr                          # 1e-3, for Adam's learning rate
+    val_split = args.val_split                      # 0.1, validation in training
+    shuffle_dataset = args.shuffle_dataset        # True, shuffle dataset in training
+    use_cuda = args.use_cuda                        # True, use CUDA
+    print_every = args.print_every                  # 1, what epoch interval to print losses
+    log_tensorboard = args.log_tensorboard        # True, Whether to log loss++ to tensorboard
+    group_index = args.group[0]                     # 1-1, Required for SMD dataset. <group_index>-<index>
+    index = args.group[2:]                          # # 1-1, Required for SMD dataset. <group_index>-<index>
     args_summary = str(args.__dict__)
     print(args_summary)
 

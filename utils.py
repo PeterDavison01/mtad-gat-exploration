@@ -54,7 +54,7 @@ def get_target_dims(dataset):
 
 
 def get_data(dataset, max_train_size=None, max_test_size=None,
-             normalize=False, spec_res=False, train_start=0, test_start=0):
+            normalize=False, spec_res=False, train_start=0, test_start=0):
     """
     Get data from pkl files
 
