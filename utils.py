@@ -133,6 +133,8 @@ def create_data_loaders(train_dataset, batch_size, val_split=0.1, shuffle=True, 
         if shuffle:
             np.random.shuffle(indices)
         train_indices, val_indices = indices[split:], indices[:split]
+        print(train_indices)
+        print(val_indices)
 
         train_sampler = SubsetRandomSampler(train_indices)
         valid_sampler = SubsetRandomSampler(val_indices)

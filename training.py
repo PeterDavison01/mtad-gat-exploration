@@ -104,6 +104,7 @@ class Trainer:
             recon_b_losses = []
 
             for x, y in train_loader:
+                print(x)
                 x = x.to(self.device)
                 y = y.to(self.device)
                 self.optimizer.zero_grad()
